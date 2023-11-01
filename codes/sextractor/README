@@ -1,0 +1,15 @@
+run fink_parquet2fits.py to create stamp fits files for sextractor
+run fink_runsex.py for running sextractor on stamp fits files
+
+this script and provided sextractor config files - hosts.sex, hosts.param, default.conv - must be in the same folder
+
+sextractor logfile in hosts_sex.log
+
+change read_path and write_path in scripts to point to your read/write folders
+
+fink_parquet2fits.py is set to create fits files for first and final stamps. For all stamps see comments in the code.
+
+naming convention: objectID_type_TS_sex.fits
+where type can be: SCI, TEMP, DIFF
+TS is the sequence number of the time stamp (e.g. 0, 2, 81, etc)
+sex is the type of sextractor output: CAT for the catalogue (fits table) , SEG for the segmented image, and no prefix for the source image. Check this and other metadata in image header. 
